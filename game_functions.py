@@ -85,8 +85,7 @@ def fire_bullets(ai_settings,screen,ship,bullets):
 def get_number_aliens_x(ai_settings,alien_width):
     '''Determine the number of aliens that will fit in a row.'''
     available_space_x=ai_settings.screen_width-2*alien_width
-    number_aliens_x=int(available_space_x/(2*alien_width))
-    return number_aliens_x
+    return int(available_space_x/(2*alien_width))
 
 def create_alien(ai_settings,screen,aliens,alien_number):
     alien=Alien(ai_settings,screen)
@@ -124,7 +123,7 @@ def update_aliens(ai_settings,stats,screen,aliens,ship,bullets):
     check_aliens_bottom(ai_settings,stats,screen,ship,aliens,bullets)
 
 def create_stars(ai_settings,screen,stars):
-    for i in range(ai_settings.stars_number):
+    for _ in range(ai_settings.stars_number):
         star=Star(ai_settings,screen)
         stars.add(star)
     return stars
